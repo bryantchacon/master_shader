@@ -1,2 +1,2 @@
-# master-shader
-Master shader script and exercises.
+# Master Shader
+I called it Master Shader but in fact the principal script is a shader with commented code explaining the main code that can be used to create a shader in Shaderlab in Unity, and the rest are exercises on how to create a variety of effects, including how to render lighting or shadows, other types of shaders and render pipelines such as Compute Shader, Sphere Tracing and even how to configure Ray Tracing in a scene.
