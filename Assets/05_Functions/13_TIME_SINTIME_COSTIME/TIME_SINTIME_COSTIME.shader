@@ -55,7 +55,7 @@ Shader "USB/TIME_SINTIME_COSTIME"
                 _SinTime.x = t / 8;
                 _SinTime.y = t / 4;
                 _SinTime.z = t / 3;
-                _SinTime.w = t; //Equivale a sin(_Time.y)
+                _SinTime.w = t; //Igual a sin(_Time.y)
                 */
 
                 //Valores de _CosTime
@@ -63,7 +63,7 @@ Shader "USB/TIME_SINTIME_COSTIME"
                 _CosTime.x = t / 8;
                 _CosTime.y = t / 4;
                 _CosTime.z = t / 3;
-                _CosTime.w = t; //Equivale a cos(_Time.y)
+                _CosTime.w = t; //Igual a cos(_Time.y)
                 */
 
                 // i.uv.x += _Time.y; //Agrega animacion de desplazamiento en la coordenada U de las UVs

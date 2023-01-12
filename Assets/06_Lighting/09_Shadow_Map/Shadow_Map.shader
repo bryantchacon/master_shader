@@ -17,7 +17,7 @@ Shader "USB/Shadow_Map"
         //SHADOW CASTER PASS
         Pass
         {
-            Name "Shadow Caster" //Name solo es para asignar un nombre al pass, no tiene funcion sobre el calculo del shader
+            Name "Shadow Caster" //La unica funcion de Name es asignarle nombre al pass, no tiene funcion sobre el calculo del shader
             Tags
             {
                 "LightMode"="ShadowCaster" //Cuando un pass va a ser para el Shadow Caster, el LightMode se declara como tal

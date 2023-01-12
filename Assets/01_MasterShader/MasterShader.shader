@@ -64,7 +64,7 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
     }
     SubShader
     {
-        Tags //BOTH, se pueden usar tanto en los Subshader o los Pass
+        Tags //BOTH, se pueden usar tanto en los Subshader o en los Pass
         {
             // "RenderType"="Opaque" //Valor por default, principalmente se usa para sustituir un shader por otro por medio de un script en la camara
             // "Queue"="Geometry" //Valor por default, no viene en el codigo. Queue sirve para RENDERIZAR OBJETOS TRANSPARENTES, SEMI TRANSPARENTES U OPACOS(?) usando el ALGORITMO DE PINTADO CONVENCIONAL (p.67 y 96); toma como referencia el orden de los objetos en la escena iniciando desde el mas lejano a la camara en su eje Z y finalizando en el mas cercano a la misma, finalmente, se dibujan en pantalla en ese mismo orden
@@ -74,15 +74,15 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
         }
         Blend [_SrcFactor] [_DstFactor] //BOTH. Para poder hacer uso de blend primero hay que configurar el Queue y el RenderType en Transparent. En este caso esta configurado para poder cambiar los valores desde el inspector. Ejemplos de tipos de blending;
         /*
-        SrcAlpha OneMinusSrcAlpha      //Blending normal (se puede modificar su intensidad), activa el canal alpha
-        One One                        //Blending aditivo (NO se puede modificar su intensidad)
-        OneMinusDstColor One           //Blending aditivo suave (NO se puede modificar su intensidad)
-        DstColor Zero                  //Blending multiplicativo (NO se puede modificar su intensidad)
-        DstColor SrcColor              //Blending multiplicativo x2 (NO se puede modificar su intensidad)
-        SrcColor One                   //Blending overlay (NO se puede modificar su intensidad)
-        OneMinusSrcColor One           //Blending luz suave (NO se puede modificar su intensidad)
-        Zero OneMinusSrcColor          //Blending negativo (NO se puede modificar su intensidad)
-        One OneMinusSrcAlpha           //Blending premultiplicado (se puede modificar su intensidad)
+        • SrcAlpha OneMinusSrcAlpha      //Blending normal (se puede modificar su intensidad), activa el canal alpha
+        • One One                        //Blending aditivo (NO se puede modificar su intensidad)
+        • OneMinusDstColor One           //Blending aditivo suave (NO se puede modificar su intensidad)
+        • DstColor Zero                  //Blending multiplicativo (NO se puede modificar su intensidad)
+        • DstColor SrcColor              //Blending multiplicativo x2 (NO se puede modificar su intensidad)
+        • SrcColor One                   //Blending overlay (NO se puede modificar su intensidad)
+        • OneMinusSrcColor One           //Blending luz suave (NO se puede modificar su intensidad)
+        • Zero OneMinusSrcColor          //Blending negativo (NO se puede modificar su intensidad)
+        • One OneMinusSrcAlpha           //Blending premultiplicado (se puede modificar su intensidad)
         */
         BlendOp Add //Blending operation. Valor por default, no viene escrito en el codigo
         // BlendOp Sub
@@ -91,7 +91,12 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
         // BlendOp RevSub
         //PARA MAS INFORMACION SOBRE Blend CHECAR: https://docs.unity3d.com/Manual/SL-Blend.html
 
-        ZWrite [_ZWrite] //BOTH. Valor por default On, no viene en el codigo. Generalmente se desactiva (Off) cuando se usan transparencias (incluido Stencil (carpeta 04_Stencil), al configurar el ColorMask en 0), por ejemplo; cuando se usan las opciones de blending, cuando se quiere invertir el ALGORITMO DE PINTADO CONVENCIONAL (p.67 y 96), y para evitar errores graficos entre objetos semi transparentes (p. 88), sin embargo, tambien sera necesario (ademas de desactivar el ZWrite y poner el Queue de los objetos en Transparent), ponerlos en diferentes layers sumando o restando uno al valor del Queue, por ejemplo: 3000+1, 3000-1 y 3000 (si son 3 que uno quede con el valor por default)
+        ZWrite [_ZWrite] //BOTH. Valor por default On, no viene en el codigo. Generalmente se desactiva (Off), cuando:
+        /*
+        • Se usan transparencias, incluido Stencil (carpeta 04_Stencil del proyecto MasterShader), al configurar el ColorMask en 0
+        • Se usan las opciones de blending
+        • Se quiere evitar errores graficos entre objetos semi transparentes (p. 88), sin embargo, tambien sera necesario (ademas de desactivar el ZWrite y poner el RenderType y Queue en Transparent), ponerlos en diferentes layers sumando o restando uno al valor del Queue, por ejemplo: 3000+1, 3000-1 y 3000 (si son 3 que uno quede con el valor por default)
+        */
 
         AlphaToMask [_AlphaMask] //BOTH. Valor por default Off, no viene en el codigo. Para activarlo basta con escribirlo con On. Actua como una mascara para hacer el canal alpha completamente transparente ya que solo evuelve 0 o 1, siendo 0 transparente para el canal alpha y 1 para opaco. Ademas no es necesario agregar Tags de transparencia ni otros comandos. Es muy util para vegetacion en general o para crear efectos de portales. Configurado para poder cambiar los valores desde el inspector
 
@@ -99,22 +104,25 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
 
         Cull [_Face] //BOTH. Valor por default Back (las caras externas del objeto son renderizadas y las de internas no), no viene en el codigo.Selecciona que caras del objeto no se renderizaran con respecto a la profundidad del pixel. Sus otros dos valores son Front (las caras internas son renderizadas y las externas no) y Off (todas las caras son renderizadas). Configurado para poder cambiar los valores desde el inspector
 
-        ZTest LEqual //Valor por default, no viene en el codigo. ZTest controla como se debe realizar el Depth Testing, este a su vez determina si un pixel debe o no ser actualizado en el Depth Buffer, tambien llamado Z-Buffer. Tiene 7 valores diferentes (p.89):
+        ZTest LEqual //BOTH. Valor por default, no viene en el codigo. ZTest controla como se debe realizar el Depth Testing, este a su vez determina si un pixel debe o no ser actualizado en el Depth Buffer, tambien llamado Z-Buffer. Tiene 7 valores diferentes (p.89):
+        //NOTA: Aunque se puede aplicar a objetos, no funciona al 100 con estos y al parecer si lo hace si se aplica a la camara, debido a su frustrum.
         /*
-        Less: Dibuja los objetos que esten por delante del objeto QUE TIENE EL SHADER, los que esten a la misma distancia o por detras no.
-        Greater: Dibuja los objetos que esten por detras del objeto QUE TIENE EL SHADER, los que esten a la misma distancia o por delante no.
-        LEqual (Valor por default): Dibuja los objetos que esten por delante o a la misma distancia del objeto QUE TIENE EL SHADER, los que esten por detras no.
-        GEqual: Dibuja los objetos que esten por detras o a la misma distancia del objeto QUE TIENE EL SHADER, los que esten por delante no.
-        Equal: Dibuja los objetos que esten a la misma distancia del objeto QUE TIENE EL SHADER, los que esten por delante y por detras no.
-        NotEqual: Dibuja los objetos que esten por delante y por detras del objeto QUE TIENE EL SHADER, los que esten a la misma distancia no.
-        Always: Siempre dibujara los objetos independientemente de a que distancia esten entre si.
+        • Less: Renderiza el efecto que indique el shader (o uno de sus pases), por delante de los demas objetos, los que esten a la misma distancia o por detras no.
+        • Greater: Renderiza el efecto que indique el shader (o uno de sus pases), por detras de los demas objetos, los que esten a la misma distancia o por delante no.
+        • LEqual (Valor por default): Renderiza el efecto que indique el shader (o uno de sus pases), por delante o a la misma distancia de los demas objetos, los que esten por detras no.
+        • GEqual: Renderiza el efecto que indique el shader (o uno de sus pases), por detras o a la misma distancia de los demas objetos, los que esten por delante no.
+        • Equal: Renderiza el efecto que indique el shader (o uno de sus pases), a la misma distancia de los demas objetos, los que esten por delante y por detras no.
+        • NotEqual: Renderiza el efecto que indique el shader (o uno de sus pases), por delante y por detras de los demas objetos, los que esten a la misma distancia no.
+        • Always: Siempre rederizara el efecto que indique el shader independientemente de a que distancia este con respecto a los demas.
         */
-        //Generalmente se usa en shaders de pases multiples cuando se requiere generar diferencia de colores y profundidades, por ejemplo; un efecto de un personaje saliendo de las sombras hacia donde hay luz.
+        //Generalmente se usa en shaders de pases multiples cuando se requiere generar diferencia de colores y profundidades, por ejemplo; un efecto de un personaje saliendo de las sombras hacia donde hay luz, o que al salir de cierto lugar se cambie el color de su ropa, para que esto quede mejor basta con descartar los pixeles del objeto por el que pasa de estar detras a estar por delante.
 
         LOD 100 //Level Of Detail. Indica cuan exigente en terminos computacionales es el shader
 
         Pass //Pass = 1 Render Pass = 1 Draw Call
         {
+            Name "Pass 0" //La unica funcion de Name es asignarle nombre al pass, no tiene funcion sobre el calculo del shader
+
             CGPROGRAM //Inicio del CG program. Todas las funciones necesarias para que el shader compile van aqui
 
             //Pragmas que permiten compilar el vertexShader y fragmentShader como tales
@@ -188,14 +196,14 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
                 //Aplica el fog (si se activa)
                 UNITY_APPLY_FOG(i.fogCoord, col);
 
-                //Condicional if en CG, en este caso para usar el Toggle _Enable. Si se va agregar color debe hacerse aqui ya que en el return final no funcionara
+                //CG if, en este caso para usar el Toggle _Enable. Si se va agregar color debe hacerse aqui ya que en el return final no funcionara
                 // #if _ENABLE_ON
                 //     return col;
                 // #else
                 //     return col * _Color;
                 // #endif
 
-                //Condicional para usar los valores del KeywordEnum _Options
+                //CG if para usar los valores del KeywordEnum _Options
                 // #if _OPTIONS_OFF
                 //     return col;
                 // #elif _OPTIONS_RED

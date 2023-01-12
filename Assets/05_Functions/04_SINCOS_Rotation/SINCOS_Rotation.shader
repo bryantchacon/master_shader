@@ -66,6 +66,7 @@ Shader "USB/SINCOS_Rotation"
                 );
 
                 return mul(vertex, mul(mZ, mul(mX, mY)));
+                // return mul(mul(mul(mX, mY), mZ), vertex);
             }
 
             v2f vert (appdata v)

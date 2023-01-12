@@ -45,7 +45,7 @@ Shader "USB/Ambient_Color"
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                float3 ambient_color = UNITY_LIGHTMODEL_AMBIENT * _Ambient; //UNITY_LIGHTMODEL_AMBIENT da acceso al ambient color de la escena, y al multiplicarlo por _Ambient se puede controlar su intensidad sobre el objeto desde el inspector, el color de este se puede cambiar desde Window > Renderign > Lighting > Enviroment > Ambient Color
+                float3 ambient_color = UNITY_LIGHTMODEL_AMBIENT * _Ambient; //UNITY_LIGHTMODEL_AMBIENT da acceso al ambient color de la escena, y al multiplicarlo por _Ambient se puede controlar su intensidad sobre el objeto desde el inspector, el color de este se puede cambiar desde Window > Renderign > Lighting > Enviroment > Enviroment Lighting > Source > Color & Ambient Color > Seleccionar el color. En Sun Source seleccionar la luz principal (Directional Light en este caso), si no esta seleccionada
                 col.rgb += ambient_color;
 
                 return col;

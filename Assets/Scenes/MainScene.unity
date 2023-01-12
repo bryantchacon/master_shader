@@ -803,6 +803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SphereMasterShader
       objectReference: {fileID: 0}
+    - target: {fileID: 2124861288535620001, guid: 88bf1edc2b5a36b41a31426b884f246e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2124861288535620013, guid: 88bf1edc2b5a36b41a31426b884f246e, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -1,0 +1,24 @@
+//NOTAS:
+/*
+1. Un compute shader al igual que un vertex-fragment shader esta escrito en HLSL
+2. Un compute shader necesita de un C# script para comunicarse entre unity y el programa, al igual que un Vertex-Fragment shader necesita de ShaderLab para comunicarse entre unity y el CGPROGRAM/HLSLPROGRAM
+*/
+
+//Cada funcion se indica como kernel para que los nucleos del GPU la puedan compilar, se pueden tener varios kernel, equivale a declarar el vertex y el fragment shaders como tales tambien con un pragma para que puedan compilar
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it with cs.SetTexture
+RWTexture2D<float4> Result; //Textura 2D para lectura y escritura random, a esto se refiere el RW del inicio, esta caracteristica permite enviar datos desde la CPU a la GPU, procesar en paralelo y luego traerlos de vuelta, pero si se requiere que la variable sea solo de escritura basta con declararla sin el RW
+
+/*
+• Numero de hilos que se usaran para procesar cada texel de la textura
+• La unidad mas pequeña que puede procesar un Compute Shader corresponde a un hilo independiente
+• Para saber el numero de hilos del compute shader basta con multiplicar los valores de numthreads(x, y, z), que es igual a 8 * 8 * 1 = 64
+*/
+[numthreads(8, 8, 1)]
+void CSMain (uint3 id : SV_DispatchThreadID) //Usa una semantica como argumento y como output tiene un color RGBA
+{
+    // TODO: insert actual code here!
+
+    Result[id.xy] = float4(id.x & id.y, (id.x & 15)/15.0, (id.y & 15)/15.0, 0.0);
+}
