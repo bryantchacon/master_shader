@@ -1,24 +1,39 @@
 //NOTAS:
 /*
 1. Un compute shader al igual que un vertex-fragment shader esta escrito en HLSL
-2. Un compute shader necesita de un C# script para comunicarse entre unity y el programa, al igual que un Vertex-Fragment shader necesita de ShaderLab para comunicarse entre unity y el CGPROGRAM/HLSLPROGRAM
+2. Un compute shader necesita de un C# script para comunicarse entre unity y el programa, al igual que un Vertex-Fragment shader necesita de ShaderLab para comunicarse entre unity y el CGPROGRAM/HLSLPROGRAM, lo anterior implica que el compute shader no se asigna por medio de un material, si no por medio del C# script
 */
 
 //Cada funcion se indica como kernel para que los nucleos del GPU la puedan compilar, se pueden tener varios kernel, equivale a declarar el vertex y el fragment shaders como tales tambien con un pragma para que puedan compilar
 #pragma kernel CSMain
 
-// Create a RenderTexture with enableRandomWrite flag and set it with cs.SetTexture
-RWTexture2D<float4> Result; //Textura 2D para lectura y escritura random, a esto se refiere el RW del inicio, esta caracteristica permite enviar datos desde la CPU a la GPU, procesar en paralelo y luego traerlos de vuelta, pero si se requiere que la variable sea solo de escritura basta con declararla sin el RW
+RWTexture2D<float4> Result; //Variable para recibir una textura 2D RGBA para lectura y escritura random, a esto se refiere el RW del inicio, esta caracteristica permite enviar datos desde la CPU a la GPU, procesar en paralelo y luego traerlos de vuelta, pero si se requiere que la variable solo sea de escritura basta con declararla sin el RW (como en ColTex). Es la variable buffer del compute shader
 
+Texture2D<float4> ColTex; //Recibe la textura desde el C# script
+SamplerState sampler_ColTex; //Sampler de la textura
+
+[numthreads(8, 8, 1)] //Determina el numero de hilos en cada grupo, cada uno de los cuales se procesa en un nucleo de la GPU de manera independiente
 /*
 • Numero de hilos que se usaran para procesar cada texel de la textura
 • La unidad mas pequeña que puede procesar un Compute Shader corresponde a un hilo independiente
 • Para saber el numero de hilos del compute shader basta con multiplicar los valores de numthreads(x, y, z), que es igual a 8 * 8 * 1 = 64
 */
-[numthreads(8, 8, 1)]
 void CSMain (uint3 id : SV_DispatchThreadID) //Usa una semantica como argumento y como output tiene un color RGBA
+//SV_DispatchThreadID corresponde a la suma del numero de hilos, por cada grupo que se esta usando, mas el indice de cada hilo:
+/*
+SV_DispatchThreadID = ([(SV_GroupID) * (numthreads)] + (SV_GroupThreadID))
+• SV_GroupID: Indice de cada grupo de hilos
+• SV_GroupThreadID: ID de cada hilo
+*/
+//Con esto, el ID de cada hilo se guarda en la variable id de tipo uint3, uint solo guarda numeros enteros a partir del 0, y tiene sentido ya que el indice de cada grupo de hilos empieza en 0, 0, 0
 {
-    // TODO: insert actual code here!
+    uint width;
+    uint height;
+    Result.GetDimensions(width, height); //GetDimensions() es de tipo void, por lo tanto lo que hace es guardar las dimensiones de la variable result en width y height, las cuales corresponden al valor de la variable m_texSize en el C# script: void GetDimensions(out uint width, out uint height);
 
-    Result[id.xy] = float4(id.x & id.y, (id.x & 15)/15.0, (id.y & 15)/15.0, 0.0);
+    // float2 uv = float2((id.xy + float2(0.5, 0.5)) / float2(width, height)); //Determina el valor de los UV, esta linea de codigo sirve solo si en la configuracion de la textura Wrap Mode = Repeat
+    float2 uv = float2(id.xy / float2(width, height)); //Determina el valor de los UV, esta linea de codigo sirve solo si en la configuracion de la textura Wrap Mode = Clamp
+    float4 col = ColTex.SampleLevel(sampler_ColTex, uv, 0); //Determina la textura en el kernel, SampleLevel() puede retornar un numero o un vector, aqui se usa para guardar los valores de muestreo RGBA en la variable col
+
+    Result[id.xy] = col;
 }

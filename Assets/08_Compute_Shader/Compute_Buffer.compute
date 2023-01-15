@@ -1,0 +1,41 @@
+#pragma kernel CSMain
+
+RWTexture2D<float4> Result;
+float4 MainColor;
+
+//Struct de valores
+struct Circle
+{
+    float radius;
+    float center;
+    float smooth;
+}
+
+//Buffer, almacena los valores que se envien desde el C# script
+StructuredBuffer<Circle> CircleBuffer;
+
+//Funcion para crear un circulo
+float CircleShape(float2 uvs, float center, float radius, float smooth)
+{
+    float c = length(uvs - center);
+    return smoothstep(c - smooth, c + smooth, radius);
+}
+
+[numthreads(128,1,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    uint width;
+    uint height;
+    Result.GetDimensions(width, height);
+    float2 uv = float2((id.xy + 0.5) / float2(width, height));
+
+    //Acceso a los valores de la lista
+    float center = CircleBuffer[id.x].center;
+    float radius = CircleBuffer[id.x].radius;
+    float smooth = CircleBuffer[id.x].smooth;
+
+    //Uso de la funcion CircleShape
+    float c = CircleShape(uv, center, radius, smooth);
+
+    Result[id.xy] = float4(c, c, c, 1) * MainColor;
+}
