@@ -9,7 +9,7 @@ struct Circle
     float radius;
     float center;
     float smooth;
-}
+};
 
 //Buffer, almacena los valores que se envien desde el C# script
 StructuredBuffer<Circle> CircleBuffer;

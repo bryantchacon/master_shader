@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1129838269046215517
 Transform:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d690d51d9196eb94798c5850bde4f700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_shader: {fileID: 7200000, guid: d3d36636dc177b643a8e46223db79846, type: 3}
+  m_shader: {fileID: 7200000, guid: ee578aedbb1c0ba43ac9e9fb23f940cc, type: 3}
   m_radius: 0.5
   m_center: 0.5
   m_smooth: 0.01

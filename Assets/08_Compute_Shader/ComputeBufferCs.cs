@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ComputeBufferScript : MonoBehaviour
+public class ComputeBufferCs : MonoBehaviour
 {
     public ComputeShader m_shader;
 
@@ -64,7 +64,7 @@ public class ComputeBufferScript : MonoBehaviour
         int size = (int)threadGroupSizeX;
         m_circle = new Circle[size];
 
-        for (int i = 0; i < size; i++)
+        for(int i = 0; i < size; i++)
         {
             Circle circle = m_circle[i];
             circle.radius = m_radius;

@@ -123,6 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &372383532
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5408197110451541161, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_Name
+      value: ShaderGraphSimpleColorURP
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541161, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +408,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorToon
       objectReference: {fileID: 0}
+    - target: {fileID: 454824662026990224, guid: 5f091e7a84dc8ac45a0f9d285e6057b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 454824662026990225, guid: 5f091e7a84dc8ac45a0f9d285e6057b0, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -402,7 +467,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 609599463184338210, guid: 279ee330ad232ac418b2dfe1404d2ce5, type: 3}
       propertyPath: m_Name
-      value: SphereInputsOutputs
+      value: InputsOutputs
+      objectReference: {fileID: 0}
+    - target: {fileID: 609599463184338210, guid: 279ee330ad232ac418b2dfe1404d2ce5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 609599463184338214, guid: 279ee330ad232ac418b2dfe1404d2ce5, type: 3}
       propertyPath: m_RootOrder
@@ -459,7 +528,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 644039294602028514, guid: 372c84798207f9344884a10ac4405e83, type: 3}
       propertyPath: m_Name
-      value: QuadCeilZoom
+      value: CeilZoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 644039294602028514, guid: 372c84798207f9344884a10ac4405e83, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 644039294602028518, guid: 372c84798207f9344884a10ac4405e83, type: 3}
       propertyPath: m_RootOrder
@@ -562,6 +635,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShadowMapURP
       objectReference: {fileID: 0}
+    - target: {fileID: 874119748792791398, guid: af7b07f7a84aa3d44b0142a7799a38bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7b07f7a84aa3d44b0142a7799a38bc, type: 3}
 --- !u!1001 &1002832324397919230
@@ -617,7 +694,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1002832326189771909, guid: 17fad5273329b2d41bcf99f8278c2112, type: 3}
       propertyPath: m_Name
-      value: SphereDiffuseReflection
+      value: DiffuseReflection
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002832326189771909, guid: 17fad5273329b2d41bcf99f8278c2112, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17fad5273329b2d41bcf99f8278c2112, type: 3}
@@ -630,11 +711,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1129838269046215513, guid: fedc7a642d7cb694f925bcc9e4960288, type: 3}
       propertyPath: m_Name
-      value: QuadSimpleColorCG
+      value: ComputeShader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129838269046215513, guid: fedc7a642d7cb694f925bcc9e4960288, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1129838269046215517, guid: fedc7a642d7cb694f925bcc9e4960288, type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1129838269046215517, guid: fedc7a642d7cb694f925bcc9e4960288, type: 3}
       propertyPath: m_LocalPosition.x
@@ -687,7 +772,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1460077473920939799, guid: aeba163925d21c740a520bd89c36a51c, type: 3}
       propertyPath: m_Name
-      value: QuadTimeSinTimeCosTime
+      value: TimeSinTimeCosTime
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460077473920939799, guid: aeba163925d21c740a520bd89c36a51c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1460077473920939803, guid: aeba163925d21c740a520bd89c36a51c, type: 3}
       propertyPath: m_RootOrder
@@ -745,6 +834,10 @@ PrefabInstance:
     - target: {fileID: 1819919726578533362, guid: ba51e75a32f59784087e6e5080f9947b, type: 3}
       propertyPath: m_Name
       value: ShadowMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819919726578533362, guid: ba51e75a32f59784087e6e5080f9947b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1819919726578533363, guid: ba51e75a32f59784087e6e5080f9947b, type: 3}
       propertyPath: m_RootOrder
@@ -845,7 +938,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1954865054625344894, guid: 144627ed2c0e1c04a8f9993d90d4e5b0, type: 3}
       propertyPath: m_Name
-      value: CubeSimpleColor
+      value: SimpleColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954865054625344894, guid: 144627ed2c0e1c04a8f9993d90d4e5b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 144627ed2c0e1c04a8f9993d90d4e5b0, type: 3}
@@ -858,11 +955,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2124861288535620001, guid: 88bf1edc2b5a36b41a31426b884f246e, type: 3}
       propertyPath: m_Name
-      value: SphereMasterShader
+      value: MasterShader
       objectReference: {fileID: 0}
     - target: {fileID: 2124861288535620001, guid: 88bf1edc2b5a36b41a31426b884f246e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2124861288535620013, guid: 88bf1edc2b5a36b41a31426b884f246e, type: 3}
       propertyPath: m_RootOrder
@@ -965,6 +1062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StepSmoothstepSolidDifuse
       objectReference: {fileID: 0}
+    - target: {fileID: 2655161509864470388, guid: 8a511ef9e916ca34593dd7525bd5c864, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a511ef9e916ca34593dd7525bd5c864, type: 3}
 --- !u!1001 &2966756419416803794
@@ -1022,6 +1123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReplacementShader
       objectReference: {fileID: 0}
+    - target: {fileID: 2966756418620320727, guid: f499dd4f8889fb04994fb423c6f644e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f499dd4f8889fb04994fb423c6f644e2, type: 3}
 --- !u!1001 &3035317565189405922
@@ -1033,7 +1138,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3035317565192414936, guid: 0627753715e885943999731884268dbe, type: 3}
       propertyPath: m_Name
-      value: SphereSpecularReflection
+      value: SpecularReflection
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035317565192414936, guid: 0627753715e885943999731884268dbe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3035317565192414940, guid: 0627753715e885943999731884268dbe, type: 3}
       propertyPath: m_RootOrder
@@ -1136,6 +1245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FresnelEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 3066872734793493910, guid: aed199a168f10dc40a16d410a87ff45f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aed199a168f10dc40a16d410a87ff45f, type: 3}
 --- !u!1001 &4078644700239648089
@@ -1148,6 +1261,10 @@ PrefabInstance:
     - target: {fileID: 4078644699748103256, guid: 9eff862ee0ad6ee4a85bdaf57964eb99, type: 3}
       propertyPath: m_Name
       value: Stencil
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078644699748103256, guid: 9eff862ee0ad6ee4a85bdaf57964eb99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4078644699748103259, guid: 9eff862ee0ad6ee4a85bdaf57964eb99, type: 3}
       propertyPath: m_RootOrder
@@ -1204,7 +1321,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4328425507673120563, guid: 80575686a85c7d648baadfa2e1a11dd0, type: 3}
       propertyPath: m_Name
-      value: QuadLerpSkins
+      value: LerpSkins
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328425507673120563, guid: 80575686a85c7d648baadfa2e1a11dd0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4328425507673120719, guid: 80575686a85c7d648baadfa2e1a11dd0, type: 3}
       propertyPath: m_RootOrder
@@ -1261,7 +1382,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5173288136375935339, guid: 990dd819467779e4b9f00f8a30e56243, type: 3}
       propertyPath: m_Name
-      value: QuadFracCircles
+      value: FracCircles
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173288136375935339, guid: 990dd819467779e4b9f00f8a30e56243, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5173288136375935343, guid: 990dd819467779e4b9f00f8a30e56243, type: 3}
       propertyPath: m_RootOrder
@@ -1318,11 +1443,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5408197110451541161, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
       propertyPath: m_Name
-      value: SphereCustomLightSG
+      value: ShaderGraphCustomLightURP
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541161, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5408197110451541165, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1375,11 +1504,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5723708821416810760, guid: fd1e6dc236808204d9cc94f6b6904618, type: 3}
       propertyPath: m_Name
-      value: SphereSlicedFruit
+      value: SlicedFruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723708821416810760, guid: fd1e6dc236808204d9cc94f6b6904618, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723708821416810764, guid: fd1e6dc236808204d9cc94f6b6904618, type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5723708821416810764, guid: fd1e6dc236808204d9cc94f6b6904618, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1432,7 +1565,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6214926145081514019, guid: 1ebfa0322a08fc742b7638ef367acced, type: 3}
       propertyPath: m_Name
-      value: SphereNormalMap
+      value: NormalMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214926145081514019, guid: 1ebfa0322a08fc742b7638ef367acced, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6214926145081514023, guid: 1ebfa0322a08fc742b7638ef367acced, type: 3}
       propertyPath: m_RootOrder
@@ -1533,7 +1670,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6420602960891440172, guid: a6d1fcc933237174ba43993092d446d4, type: 3}
       propertyPath: m_Name
-      value: CapsuleTanHologram
+      value: TanHologram
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420602960891440172, guid: a6d1fcc933237174ba43993092d446d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6d1fcc933237174ba43993092d446d4, type: 3}
@@ -1590,7 +1731,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6665065228821880495, guid: 35061748a6b231a4db8881e3d0cda8fb, type: 3}
       propertyPath: m_Name
-      value: QuadLenghtCircle
+      value: LenghtCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665065228821880495, guid: 35061748a6b231a4db8881e3d0cda8fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35061748a6b231a4db8881e3d0cda8fb, type: 3}
@@ -1603,7 +1748,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6961398231815747794, guid: d54f643b759588446aa3a39e7580fc7f, type: 3}
       propertyPath: m_Name
-      value: QuadAbsKaleidoscope
+      value: AbsKaleidoscope
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961398231815747794, guid: d54f643b759588446aa3a39e7580fc7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6961398231815747798, guid: d54f643b759588446aa3a39e7580fc7f, type: 3}
       propertyPath: m_RootOrder
@@ -1660,7 +1809,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7019063433449437505, guid: 427abac01d5ccd343baa9d0d82a4d4d9, type: 3}
       propertyPath: m_Name
-      value: SphereStandardSurfaceShader
+      value: StandardSurfaceShader
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019063433449437505, guid: 427abac01d5ccd343baa9d0d82a4d4d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7019063433449437517, guid: 427abac01d5ccd343baa9d0d82a4d4d9, type: 3}
       propertyPath: m_RootOrder
@@ -1717,7 +1870,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7497666340906163905, guid: 22fa7f8cbe23f0e499ee68f438fd6466, type: 3}
       propertyPath: m_Name
-      value: SphereCubemapReflection
+      value: CubemapReflection
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497666340906163905, guid: 22fa7f8cbe23f0e499ee68f438fd6466, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7497666340906163909, guid: 22fa7f8cbe23f0e499ee68f438fd6466, type: 3}
       propertyPath: m_RootOrder
@@ -1818,7 +1975,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497040603120109071, guid: d2b3b433005688c4a87a6332457dcd5e, type: 3}
       propertyPath: m_Name
-      value: CubeSinCosRotation
+      value: SinCosRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497040603120109071, guid: d2b3b433005688c4a87a6332457dcd5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2b3b433005688c4a87a6332457dcd5e, type: 3}
@@ -1831,7 +1992,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9032483927319971174, guid: 560ae54c0953d2340b2996c8568b6877, type: 3}
       propertyPath: m_Name
-      value: QuadClampLightIntesity
+      value: ClampLightIntesity
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032483927319971174, guid: 560ae54c0953d2340b2996c8568b6877, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9032483927319971226, guid: 560ae54c0953d2340b2996c8568b6877, type: 3}
       propertyPath: m_RootOrder
@@ -1888,7 +2053,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9161572448626314641, guid: 01536911d1c22c144a0b4ba180977fe6, type: 3}
       propertyPath: m_Name
-      value: SphereAmbientColor
+      value: AmbientColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 9161572448626314641, guid: 01536911d1c22c144a0b4ba180977fe6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9161572448626314645, guid: 01536911d1c22c144a0b4ba180977fe6, type: 3}
       propertyPath: m_RootOrder
