@@ -1,4 +1,4 @@
-Shader "USB/Replacement_shader"
+Shader "USB/Replacement_Shader"
 {
     Properties
     {

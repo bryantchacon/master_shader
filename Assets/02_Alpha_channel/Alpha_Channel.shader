@@ -1,4 +1,4 @@
-Shader "USB/Simple_color"
+Shader "USB/Alpha_Channel"
 {
     Properties
     {

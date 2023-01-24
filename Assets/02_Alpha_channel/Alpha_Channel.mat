@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Simple_color
+  m_Name: Alpha_Channel
   m_Shader: {fileID: 4800000, guid: 119b38a3644250e49b797667c6d81fa0, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []

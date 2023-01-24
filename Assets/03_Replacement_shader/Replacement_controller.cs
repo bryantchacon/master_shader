@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class Replacement_controller : MonoBehaviour
+public class Replacement_Controller : MonoBehaviour
 {
     public Shader replacementShader;
 

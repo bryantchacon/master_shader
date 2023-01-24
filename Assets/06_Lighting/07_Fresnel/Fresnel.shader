@@ -1,4 +1,4 @@
-Shader "USB/Fresnel_Effect"
+Shader "USB/Fresnel"
 {
     Properties
     {

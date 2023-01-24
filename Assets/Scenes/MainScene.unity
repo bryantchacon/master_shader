@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5408197110451541161, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
       propertyPath: m_Name
-      value: ShaderGraphSimpleColorURP
+      value: SimpleColorShaderGraphURP
       objectReference: {fileID: 0}
     - target: {fileID: 5408197110451541161, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
       propertyPath: m_IsActive
@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5408197110451541167, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 522560252ca9c59449ccdf90e8c10095, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
 --- !u!1 &705507993
@@ -938,7 +942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1954865054625344894, guid: 144627ed2c0e1c04a8f9993d90d4e5b0, type: 3}
       propertyPath: m_Name
-      value: SimpleColor
+      value: AlphaChannel
       objectReference: {fileID: 0}
     - target: {fileID: 1954865054625344894, guid: 144627ed2c0e1c04a8f9993d90d4e5b0, type: 3}
       propertyPath: m_IsActive
@@ -1243,7 +1247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3066872734793493910, guid: aed199a168f10dc40a16d410a87ff45f, type: 3}
       propertyPath: m_Name
-      value: FresnelEffect
+      value: Fresnel
       objectReference: {fileID: 0}
     - target: {fileID: 3066872734793493910, guid: aed199a168f10dc40a16d410a87ff45f, type: 3}
       propertyPath: m_IsActive
@@ -1443,7 +1447,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5408197110451541161, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
       propertyPath: m_Name
-      value: ShaderGraphCustomLightURP
+      value: DiffuseReflectionShaderGraphURP
       objectReference: {fileID: 0}
     - target: {fileID: 5408197110451541161, guid: 7adc949bb78d38b4e818d4defa421490, type: 3}
       propertyPath: m_IsActive
@@ -1975,7 +1979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7735033798592260857, guid: 7446c2eaaecce6942a81ad748353b29a, type: 3}
       propertyPath: m_Name
-      value: SMIN
+      value: MinSmthBet2SurfSMIN
       objectReference: {fileID: 0}
     - target: {fileID: 7735033798592260857, guid: 7446c2eaaecce6942a81ad748353b29a, type: 3}
       propertyPath: m_IsActive

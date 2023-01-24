@@ -328,7 +328,7 @@
     "m_Group": {
         "m_Id": ""
     },
-    "m_Name": "CustomLight (Custom Function)",
+    "m_Name": "LightDirection (Custom Function)",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
@@ -355,7 +355,7 @@
         "m_SerializableColors": []
     },
     "m_SourceType": 0,
-    "m_FunctionName": "CustomLight",
+    "m_FunctionName": "LightDirection",
     "m_FunctionSource": "b3c8b0cba5ec23e4d82af478f2fca21c",
     "m_FunctionBody": "Enter function body here..."
 }
