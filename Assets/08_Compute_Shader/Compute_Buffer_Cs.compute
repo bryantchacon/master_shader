@@ -14,7 +14,7 @@ struct Circle
 //Buffer, almacena los valores que se envien desde el C# script
 StructuredBuffer<Circle> CircleBuffer;
 
-//Funcion para crear un circulo
+//Funcion para crear un circulo 2D
 float CircleShape(float2 uvs, float center, float radius, float smooth)
 {
     float c = length(uvs - center);

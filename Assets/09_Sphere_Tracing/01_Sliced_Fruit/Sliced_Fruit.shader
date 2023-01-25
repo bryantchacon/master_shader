@@ -67,7 +67,7 @@ Shader "USB/Sliced_Fruit"
                 return exterior;
             }
 
-            //Funcion para hacer el sphere casting, que en si es la distancia de la fruta respecto a la camara
+            //Funcion para calcular el Sphere Casting, o sea, la distancia del objeto a la cámara
             float sphereCasting(float3 ray_origin, float3 ray_direction)
             /*
             • ray_origin: Punto inicial del rayo, o sea, posicion de la camara en World-Space
