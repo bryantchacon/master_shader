@@ -74,6 +74,11 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
+    - _movSpeed: 1
+    - _xMov: 0
+    - _xSway: 0
+    - _yMov: 0
+    - _ySway: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

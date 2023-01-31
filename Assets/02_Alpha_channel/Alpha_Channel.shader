@@ -12,7 +12,7 @@ Shader "USB/Alpha_Channel"
             "RenderType"="Transparent" //Activa el canal alpha, paso 1/3
             "Queue"="Transparent" //Activa el canal alpha, paso 2/3
         }
-        Blend SrcAlpha OneMinusSrcAlpha //Activa el canal alpha, paso 3/3
+        Blend SrcAlpha OneMinusSrcAlpha //Blending normal, activa el canal alpha, paso 3/3
 
         LOD 100
 

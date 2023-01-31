@@ -32,7 +32,7 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
         [Header(MATERIAL PROPERTY DRAWERS (MPD))] //Encabezado para secciones de propiedades
         [Space(10)] //Espaciado entre propiedades
         [Toggle]
-        _Enable ("Enable?", Float) = 0 //Shaderlab no tiene soporte para booleanos, pero Toggle cumple esa funcion al aparecer como un check en el inspector. 0 es apagado (desactivado) y 1 encendido (activado). Para usar este drawer hay que agregar el shader variant #pragma shader_feature. Toggle se usa para propiedades que iran DENTRO DEL PASS
+        _Enable ("Enable?", Float) = 0 //Shaderlab no tiene soporte para booleanos, pero Toggle cumple esa funcion al aparecer como un check en el inspector. 0 es apagado (desactivado) y 1 encendido (activado), si es 0 el Toggle inicara desactivado en el inspector, si es 1 iniciara activado. Para usar este drawer hay que agregar el shader variant #pragma shader_feature. Toggle se usa para propiedades que iran DENTRO DEL PASS
         [KeywordEnum(Off, Red, Blue)]
         _Options ("Color Options", Float) = 0 //Permite configurar hasta 9 estados diferentes con un menu desplegable en el inspector. Se puede usar tanto #pragma shader_feature o #pragma multi_compile como shader variant, la diferencia es que shader_feature solo compilara la opcion seleccionada en el inspector, mientras que multi_compile todas para poder ir cambiando de una a otra en tiempo de ejecucion. KeywordEnum se usa para propiedades que iran DENTRO DEL PASS
         [Enum(UnityEngine.Rendering.CullMode)]
@@ -95,7 +95,7 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
         /*
         • Se usan transparencias, incluido Stencil (carpeta 04_Stencil del proyecto MasterShader), al configurar el ColorMask en 0
         • Se usan las opciones de blending
-        • Se quiere evitar errores graficos entre objetos semi transparentes (p. 88), sin embargo, tambien sera necesario (ademas de desactivar el ZWrite y poner el RenderType y Queue en Transparent), ponerlos en diferentes layers sumando o restando uno al valor del Queue, por ejemplo: 3000+1, 3000-1 y 3000 (si son 3 que uno quede con el valor por default)
+        • Se quiere evitar errores graficos entre objetos semi transparentes (p. 88), sin embargo, tambien sera necesario (ademas de desactivar el ZWrite y poner el RenderType y Queue en Transparent), ponerlos en diferentes layers sumando o restando uno al valor del Queue, por ejemplo: 3000+1, 3000-1 y 3000 (si son 3 que uno quede con el valor por default), aunque esto solo cuando se interactua con otros objetos semi transparentes, si no, basta con poner el RenderType en From Shader desde el inspector
         */
 
         AlphaToMask [_AlphaMask] //BOTH. Valor por default Off, no viene en el codigo. Para activarlo basta con escribirlo con On. Actua como una mascara para hacer el canal alpha completamente transparente ya que solo evuelve 0 o 1, siendo 0 transparente para el canal alpha y 1 para opaco. Ademas no es necesario agregar Tags de transparencia ni otros comandos. Es muy util para vegetacion en general o para crear efectos de portales. Configurado para poder cambiar los valores desde el inspector
@@ -198,9 +198,9 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
 
                 //CG if, en este caso para usar el Toggle _Enable. Si se va agregar color debe hacerse aqui ya que en el return final no funcionara
                 // #if _ENABLE_ON
-                //     return col;
-                // #else
                 //     return col * _Color;
+                // #else
+                //     return col;
                 // #endif
 
                 //CG if para usar los valores del KeywordEnum _Options

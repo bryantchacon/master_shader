@@ -1,6 +1,6 @@
 //Custom functions p.308-312
 //Este script p.310
-//El calculo que se replica en shader graph es el de la variable interna _WordlSpaceLightPos[n](p.222), para la refleccion difusa p. 219
+//El calculo que se replica en shader graph es el de la variable interna _WordlSpaceLightPos[n] (p.222), para la refleccion difusa (p. 219)
 
 void LightDirection_float(out half3 direction)
 {

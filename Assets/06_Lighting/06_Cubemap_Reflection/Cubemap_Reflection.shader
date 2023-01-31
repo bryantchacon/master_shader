@@ -75,7 +75,7 @@ Shader "USB/Cubemap_Reflection"
                 return reflectionInt * cubemap.rgb * (cubemap.a * reflectionExp);
             }
 
-            //Para asignar una textura al objeto hay que convertirla (ya sea Skybox o 360) a Cube; se selecciona > Inspector > Texture Shape > Cube > Apply, los calculos en este fragment shader GENERAN MAYOR CONTROL EN EL RESULTADO FINAL
+            //Para asignar una textura al objeto hay que convertirla (ya sea Skybox o 360) a Cube; se selecciona > Inspector > Texture Shape > Cube > Apply, los calculos en este Fragment Shader generan MAYOR CONTROL EN EL RESULTADO FINAL
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
@@ -87,7 +87,7 @@ Shader "USB/Cubemap_Reflection"
                 return col;
             }
 
-            //El proceso con la funcion AmbientReflection() se puede resumir usando el macro UNITY_SAMPLE_TEXCUBE, ya que este asigna de manera automatica la reflexion ambiental que se encuentre configurada en la escena, es decir, si en la ruta Window > Rendering > Lighting (ventana) > Enviroment > Skybox Material, hay un Skybox asignado, la reflexion se guarda como textura dentro del shader y se usa al instante sin necesidad de generar una textura Cubemap de forma independiente (p. 251), esto es mas facil para implementar este tipo de reflexion PERO GENERA MENOR CONTROL EN EL RESULTADO FINAL
+            //El proceso con la funcion AmbientReflection() se puede resumir usando el macro UNITY_SAMPLE_TEXCUBE, ya que este asigna de manera automatica la reflexion ambiental que se encuentre configurada en la escena, es decir, si en la ruta Window > Rendering > Lighting (ventana) > Enviroment > Skybox Material, hay un Skybox asignado, la reflexion se guarda como textura dentro del shader y se usa al instante sin necesidad de generar una textura Cubemap de forma independiente (p. 251), este tipo de reflexion (este Fragment Shader) es mas facil de implementar PERO GENERA MENOR CONTROL EN EL RESULTADO FINAL
             // fixed4 frag (v2f i) : SV_Target
             // {
             //     fixed4 col = tex2D(_MainTex, i.uv);

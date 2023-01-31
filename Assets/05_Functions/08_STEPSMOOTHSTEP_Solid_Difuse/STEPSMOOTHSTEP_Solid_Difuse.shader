@@ -46,6 +46,8 @@ Shader "USB/STEPSMOOTHSTEP_Solid_Difuse"
 
             fixed4 frag (v2f i) : SV_Target
             {
+                fixed4 col = tex2D(_MainTex, i.uv);
+
                 //CODIGO PARA CREAR UN EDGE SOLIDO CON step()
                 // float edge = _Edge; //Indica a que altura estara el edge, paso 1/4
                 // fixed3 sstep = 0; //Variable donde se guardara el edge ya generado, paso 2/4
@@ -55,9 +57,11 @@ Shader "USB/STEPSMOOTHSTEP_Solid_Difuse"
                 float edge = _Edge; //Indica a que altura estara el edge, paso 1/5
                 float smooth = _Smooth; //Intensidad de la difuminacion del edge, paso 2/5
                 fixed3 sstep = 0; //Variable donde se guardara el edge ya generado, paso 3/5
-                sstep = smoothstep((i.uv.y - smooth), (i.uv.y + smooth), edge); //Aplica el suavisado del edge con smoothstep() sobre la coordenada v (por .y), paso 4/5. NOTA: smoothstep() retorna un valor de una sola dimension
+                sstep = smoothstep((i.uv.y - smooth), (i.uv.y + smooth), edge); //Aplica el suavisado del edge con smoothstep() sobre la coordenada v (por .y), paso 4/5
 
-                return fixed4(sstep, 1); //Retorna el efecto guardado en sstep y 1 para el canal aplha, paso 4/4 de step() y 5/5 de smoothstep()
+                col *= fixed4(sstep, 1); //Retorna el efecto guardado en sstep y 1 para el canal aplha, paso 4/4 de step() y 5/5 de smoothstep()
+
+                return col;
             }
             ENDCG
         }
