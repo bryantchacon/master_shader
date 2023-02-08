@@ -50,7 +50,7 @@ Shader "USB/FRAC_Circles"
             {
                 i.uv *= _Quantity; //Define las repeticiones que tendra la textura
                 float2 fuv = frac(i.uv); //frac() devuelve los decimales de un numero; lo que hace aqui es definir que cada repeticion de la textura sea del tamaño que le corresponde en las UV, segun la cantidad de repeticiones que se indiquen, por ejemplo, si son 3 repeticiones seria; 1 / 3 = 0.33, cada repeticion tendria un tamaño de 0.33 en ambas coordenadas
-                float circle = length(fuv - 0.5); //0.5 es la diagonal independiente de cada circulo
+                float circle = length(fuv - 0.5); //0.5 es la posicion en diagonal de cada circulo
                 float wCircle = floor(_Size / circle);
 
                 return float4(wCircle.xxx, 1);

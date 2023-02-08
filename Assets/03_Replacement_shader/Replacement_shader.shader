@@ -1,8 +1,16 @@
+//Para crear el efecto de Replacement Shader por medio del tag RenderType se deben cumplir las siguientes condiciones:
+/*
+1. Ambos shaders, el de reemplazo y el que se va a reemplazar deben tener el mismo RenderType
+2. Ambos deben tener propiedades en comun(la o las que se van a reemplazar entre uno y otro)
+3. Usar la funcion SetReplacementShader() en un C# script
+4. El Renderig Path de la camara debe ser Forward
+*/
+
 Shader "USB/Replacement_Shader"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+        _Color ("Color", Color) = (1,1,1,1)
     }
     SubShader
     {
@@ -10,6 +18,7 @@ Shader "USB/Replacement_Shader"
         {
             "RenderType"="Opaque"
         }
+
         LOD 100
 
         Pass
@@ -23,32 +32,26 @@ Shader "USB/Replacement_Shader"
             struct appdata
             {
                 float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
             };
 
             struct v2f
             {
-                float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
+            float4 _Color;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
-
-                fixed4 red = fixed4(1, 0, 0, 1);
-                return col * red;
+                _Color = float4(1,0,0,1);
+                return _Color;
             }
             ENDCG
         }
