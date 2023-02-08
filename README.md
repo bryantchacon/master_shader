@@ -3,62 +3,64 @@ I called it Master Shader but in fact the principal script is a shader with comm
 
 Shaders included here:
 
-> "Master Shader"
+- "Master Shader"
 
-> Alpha Channel
+- Alpha Channel
 
-> Replacement Shader (By RenderType)
+- Replacement Shader (By RenderType)
 
-> Stencil
+- Stencil
 
-> Kaleidoscope
+- Kaleidoscope
 
-> Zoom
+- Zoom
 
-> Light Intensity
+- Light Intensity
 
-> Rotation (1080°)
+- Rotation (1080°)
 
-> Hologram
+- Hologram
 
-> Toon (Basic)
+- Toon (Basic)
 
-> Step/Smoothstep - Solid/Difuse (Transitions)
+- Step/Smoothstep - Solid/Difuse (Transitions)
 
-> Circle (On Quad)
+- Circle (On Quad)
 
-> Circles (On Quad)
+- Circles (On Quad)
 
-> Skins
+- Skins
 
-> Time - SinTime - CosTime
+- Time - SinTime - CosTime
 
-> Inputs y Outputs
+- Inputs y Outputs
 
-> Normal Map
+- Normal Map
 
-> Ambient Color
+- Ambient Color
 
-> Difusse Reflection
+- Difusse Reflection
 
-> Specular Reflection
+- Specular Reflection
 
-> Cubemap Reflection
+- Cubemap Reflection
 
-> Fresnel
+- Fresnel
 
-> Standard Surface
+- Standard Surface
 
-> Shadow Map
+- Shadow Map
 
-> Shadow Map URP
+- Shadow Map URP
 
-> Simple Color with Shader Graph in URP
+- Simple Color with Shader Graph in URP
 
-> Difusse Reflection with Shader Graph in URP
+- Difusse Reflection with Shader Graph in URP
 
-> Compute Shader
+- Compute Shader
 
-> Sliced Fruit (Sphere Tracing)
+- Sliced Fruit (Sphere Tracing)
 
-> Min Smooth Between Two Surfaces (Polynomial Smooth Minimum)
+- Min Smooth Between Two Surfaces (Polynomial Smooth Minimum)
+
+> Unity 2021.3.4f1
