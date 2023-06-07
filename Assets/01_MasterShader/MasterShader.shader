@@ -218,4 +218,6 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
         }
     }
     //Fallback Off //Opcional, su formato es: Fallback "Ruta en el shader inspector/Nombre del shader"
+
+    // UsePass "Universal Render Pipeline/Lit/ShadowCaster" //UsePass llama un pass especifico de un shader en cierta ruta, en este caso el pass ShadowCaster del shader Lit en la ruta Universal Render Pipeline
 }
