@@ -6,6 +6,7 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
         [Header(NUMEROS Y SLIDERS)] //MPD de encabezado
         [Space(10)] //MPD de espaciado
         _Specular ("Specular", Range(0.0, 1.1)) = 0.3 //Slider
+        [HideInInspector] _Specular2 ("Specular2", Range(0.0, 1.1)) = 0.3 //[HideInInspector] como su nombre indica oculta una variable en el inspector
         _Factor ("Factor", Float) = 0.3 //Decimal
         _Cid ("Cid", Int) = 2 //Entero
         /*
@@ -95,7 +96,7 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
         /*
         • Se usan transparencias, incluido Stencil (carpeta 04_Stencil del proyecto MasterShader), al configurar el ColorMask en 0
         • Se usan las opciones de blending
-        • Se quiere evitar errores graficos entre objetos semi transparentes (p. 88), sin embargo, tambien sera necesario (ademas de desactivar el ZWrite y poner el RenderType y Queue en Transparent), ponerlos en diferentes layers sumando o restando uno al valor del Queue, por ejemplo: 3000+1, 3000-1 y 3000 (si son 3 que uno quede con el valor por default), aunque esto solo cuando se interactua con otros objetos semi transparentes, si no, basta con poner el RenderType en From Shader desde el inspector
+        • Se quiere evitar errores graficos entre objetos semi transparentes (p. 88), en si lo que hace es desactivar el Depth Buffer, sin embargo, tambien sera necesario (ademas de desactivar el ZWrite y poner el RenderType y Queue en Transparent), ponerlos en diferentes layers sumando o restando uno al valor del Queue, por ejemplo: 3000+1, 3000-1 y 3000 (si son 3 que uno quede con el valor por default), aunque esto solo cuando se interactua con otros objetos semi transparentes, si no, basta con poner el RenderType en From Shader desde el inspector
         */
 
         AlphaToMask [_AlphaMask] //BOTH. Valor por default Off, no viene en el codigo. Para activarlo basta con escribirlo con On. Actua como una mascara para hacer el canal alpha completamente transparente ya que solo devuelve 0 o 1, siendo 0 transparente para el canal alpha y 1 para opaco. Ademas no es necesario agregar Tags de transparencia ni otros comandos. Tambien se usa al estar delante de objetos que tengan un shader que use ZTest Greater (u otro de sus comandos que funcione detras de este) para evitar que lo que enmascara se renderice en el area del aplha de la mascara. Es muy util para vegetacion en general o para crear efectos de portales. Configurado para poder cambiar los valores desde el inspector
@@ -168,6 +169,7 @@ Shader "USB/MasterShader" //Ruta en el shader inspector/Nombre del shader
 
             //VARIABLES GLOBALES DE CONEXION DE LAS PROPIEDADES
             float _Specular;
+            float _Specular2;
             float _Factor;
             int _Cid;
             float4 _Color;
